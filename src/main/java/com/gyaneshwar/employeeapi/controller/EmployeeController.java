@@ -4,6 +4,8 @@ import com.gyaneshwar.employeeapi.model.Employee;
 import com.gyaneshwar.employeeapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public Employee createEmployee(@Valid @RequestBody Employee employee) {
         return service.createEmployee(employee);
     }
 
